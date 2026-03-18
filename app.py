@@ -40,7 +40,7 @@ def visualize_pi(n_points,pi):
     
     # Add a visual boundary for the quarter-circle
     circle = plt.Circle((0, 0), 1, color='black', fill=False, linewidth=2)
-    ax.gca().add_patch(circle)
+    ax.add_patch(circle)
     
     ax.xlim(0, 1)
     ax.ylim(0, 1)
