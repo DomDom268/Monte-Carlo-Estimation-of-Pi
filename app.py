@@ -89,8 +89,7 @@ if st.button("Run Simulation"):
     errors,
     "Number of Points",
     "Error",
-    "Convergence of Monte Carlo π Estimate"
-)
+    "Convergence of Monte Carlo π Estimate")
     st.pyplot(fig)
 
 
