@@ -121,7 +121,7 @@ This project demonstrates:
 ## 👤 Author
 
 Dominic Christopher
-HBA Candidate | Data & Quantitative Analysis Enthusiast
+Aspiring Computational Scientist
 
 ---
 
