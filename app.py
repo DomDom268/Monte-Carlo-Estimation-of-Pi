@@ -14,19 +14,31 @@ def estimate_pi(numPoints):
     
     return round(4 * (inCircle/numPoints),10)
 
-# def visualizeError(x,y,xlabel,ylabel,title):
-#     plt.figure(figsize=(8, 6))
-#     plt.gca().invert_yaxis()
-#     plt.scatter(x, y, color='blue', s=5)
-#     plt.xlabel(xlabel)
-#     plt.ylabel(ylabel)
-#     plt.title(title)
-#     plt.tight_layout()
-#     plt.show()
+def visualizeError(x,y,xlabel,ylabel,title):
+    fig, ax = plt.subplots(figsize=(8, 6))
+
+    ax.plot(x,y,marker = 'o')
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_xscale('log')
+    ax.set_yscale('log')
+    ax.set_title(title)
+    return fig
 
 def error(pi):
     return abs(round(np.pi-pi,4))
 
+def generate_convergence(max_points):
+    steps = np.logspace(1, np.log10(max_points), num=10, dtype=int)
+    
+    errors = []
+    for n in steps:
+        pi_est = estimate_pi(n)
+        err = abs(np.pi - pi_est)
+        errors.append(err)
+    
+    return steps, errors
+    
 def visualize_pi(n_points,pi):
     points = np.random.rand(n_points, 2)
     inside = np.sum(points**2, axis=1) <= 1
@@ -58,11 +70,21 @@ selected_points = st.radio(
 if st.button("Run Simulation"):
     estimate = estimate_pi(selected_points)
     err = error(estimate)
+    steps, errors = generate_convergence(selected_points)
 
     st.subheader(f"Estimated π: {round(estimate, 6)}")
     st.write(f"Error: {round(err, 6)}")
 
     fig = visualize_pi(selected_points,estimate)
+    st.pyplot(fig)
+
+    fig = visualize_error(
+    steps,
+    errors,
+    "Number of Points",
+    "Error",
+    "Convergence of Monte Carlo π Estimate"
+)
     st.pyplot(fig)
 
 
