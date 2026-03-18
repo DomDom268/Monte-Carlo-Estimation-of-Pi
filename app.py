@@ -62,7 +62,7 @@ if st.button("Run Simulation"):
     st.subheader(f"Estimated π: {round(estimate, 6)}")
     st.write(f"Error: {round(err, 6)}")
 
-    fig = visualize_pi(points,estimate)
+    fig = visualize_pi(selected_points,estimate)
     st.pyplot(fig)
 
 
