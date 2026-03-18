@@ -20,8 +20,8 @@ def visualizeError(x,y,xlabel,ylabel,title):
     ax.plot(x,y,marker = 'o')
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
-    ax.set_xscale('log')
-    ax.set_yscale('log')
+    # ax.set_xscale('log')
+    # ax.set_yscale('log')
     ax.set_title(title)
     return fig
 
