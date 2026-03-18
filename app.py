@@ -25,7 +25,7 @@ def estimate_pi(numPoints):
 #     plt.show()
 
 def error(pi):
-    return (f"Error = {abs(round(np.pi-pi,4))}")
+    return abs(round(np.pi-pi,4))
 
 def visualize_pi(n_points,pi):
     points = np.random.rand(n_points, 2)
