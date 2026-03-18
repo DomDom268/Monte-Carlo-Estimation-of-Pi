@@ -17,7 +17,12 @@ def estimate_pi(numPoints):
 def visualizeError(x,y,xlabel,ylabel,title):
     fig, ax = plt.subplots(figsize=(8, 6))
 
-    ax.plot(x,y,marker = 'o')
+    ax.plot(x,y,marker = 'o') #Empirical error
+
+    scale = y[0] * np.sqrt(x[0])
+    theoretical = scale / np.sqrt(x)
+    
+    ax.plot(x, theoretical, linestyle='--', label="~ 1/√n (theoretical)") #Theoretical error
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     # ax.set_xscale('log')
