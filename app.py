@@ -56,7 +56,7 @@ selected_points = st.radio(
 )
 
 if st.button("Run Simulation"):
-    estimate = estimate_pi(points)
+    estimate = estimate_pi(selected_points)
     err = error(estimate)
 
     st.subheader(f"Estimated π: {round(estimate, 6)}")
