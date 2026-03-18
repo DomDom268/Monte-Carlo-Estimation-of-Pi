@@ -39,7 +39,7 @@ def generate_convergence(max_points):
     
     return steps, errors
     
-def visualize_pi(n_points,pi):
+def visualizePi(n_points,pi):
     points = np.random.rand(n_points, 2)
     inside = np.sum(points**2, axis=1) <= 1
     
@@ -75,10 +75,10 @@ if st.button("Run Simulation"):
     st.subheader(f"Estimated π: {round(estimate, 6)}")
     st.write(f"Error: {round(err, 6)}")
 
-    fig = visualize_pi(selected_points,estimate)
+    fig = visualizePi(selected_points,estimate)
     st.pyplot(fig)
 
-    fig = visualize_error(
+    fig = visualizeError(
     steps,
     errors,
     "Number of Points",
