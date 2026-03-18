@@ -28,6 +28,7 @@ def visualizeError(x,y,xlabel,ylabel,title):
     # ax.set_xscale('log')
     # ax.set_yscale('log')
     ax.set_title(title)
+    ax.legend
     return fig
 
 def error(pi):
